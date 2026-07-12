@@ -147,14 +147,14 @@ else:
     st.write(f"No forecast data available for the selected season: {selected_season} and month: {selected_month}.")
 
 # Visualize past and predicted future sales for the selected season and month
-st.subheader(f"Past Sales vs. Forecasted Demand during {selected_season} ({selected_month})")
+st.subheader(f"Ventes passées vs demande prévue durant {selected_season} ({selected_month})")
 
 # Line chart for past sales and predictions for the season and specific month
 fig_line = px.line(
     x=pd.concat([historical_data['ds'], season_forecast_data['ds']]),
     y=pd.concat([historical_data['y'], season_forecast_data['yhat']]),
     labels={'x': 'Month', 'y': 'Sales'},
-    title=f"Past Sales and Forecasted Demand for {selected_product} during {selected_season} ({selected_month})"
+    title=f"Ventes passées et demande prévue pour {selected_product} during {selected_season} ({selected_month})"
 )
 fig_line.add_scatter(
     x=season_forecast_data['ds'],
