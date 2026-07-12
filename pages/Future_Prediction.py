@@ -71,7 +71,7 @@ else:
 selected_month_forecast_data = season_forecast_data[season_forecast_data['Month'] == selected_month]
 
 # Layout setup
-st.title("📈 Product Demand Forecasting")
+st.title("📈 Prévision de la demande des produits")
 st.write(f"This app presents a forecast of future demand for {selected_product}.")
 
 # Voice input and response
