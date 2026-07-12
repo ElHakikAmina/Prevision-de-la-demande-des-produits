@@ -72,7 +72,7 @@ selected_month_forecast_data = season_forecast_data[season_forecast_data['Month'
 
 # Layout setup
 st.title("📈 Prévision de la demande des produits")
-st.write(f"This app presents a forecast of future demand for {selected_product}.")
+st.write(f"Cette application présente une prévision de la demande future pour {selected_product}.")
 
 # Voice input and response
 def recognize_speech():
@@ -138,7 +138,7 @@ if not selected_month_forecast_data.empty:
     selected_lower = selected_month_forecast_data['yhat_lower'].iloc[0]
     selected_upper = selected_month_forecast_data['yhat_upper'].iloc[0]
     
-    st.subheader(f"Predicted Demand for {selected_product} - {selected_season} ({selected_month})")
+    st.subheader(f"Demande prévue pour {selected_product} - {selected_season} ({selected_month})")
     col1, col2, col3 = st.columns(3)
     col1.metric("Prediction", f"{selected_month_prediction}")
     col2.metric("Lower Estimate", f"{selected_lower}")
