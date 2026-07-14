@@ -29,10 +29,10 @@ seasons = {
 months_list = list(seasons["None"])  # Create a list of months for validation
 
 # Sidebar selection for product, season/festival, and specific month
-st.sidebar.title("Product Demand Forecasting")
-selected_product = st.sidebar.selectbox("Select a product", data['Product Name'].unique())
+st.sidebar.title("Prévision de la demande des produits")
+selected_product = st.sidebar.selectbox("Choisissez un produit", data['Product Name'].unique())
 selected_season = st.sidebar.selectbox("Select a season or festival", list(seasons.keys()))
-selected_month = st.sidebar.selectbox("Select a month", seasons[selected_season])
+selected_month = st.sidebar.selectbox("Choisissez un mois", seasons[selected_season])
 
 # Filter data for the selected product
 product_data = data[data['Product Name'] == selected_product]
@@ -166,21 +166,20 @@ fig_line.add_scatter(
 st.plotly_chart(fig_line)
 
 # Display the forecast table for the selected season and month
-st.subheader(f"Predicted Future Demand for {selected_product} ({selected_season} - {selected_month})")
+st.subheader(f"Demande future prévue pour {selected_product} ({selected_season} - {selected_month})")
 selected_month_forecast_table = selected_month_forecast_data[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].rename(
-    columns={'ds': 'Date', 'yhat': 'Predicted Sales', 'yhat_lower': 'Lower Estimate', 'yhat_upper': 'Upper Estimate'}
+    columns={'ds': 'Date', 'yhat': 'Ventes prévues', 'yhat_lower': 'Estimation basse', 'yhat_upper': 'Estimation haute'}
 )
-selected_month_forecast_table['Predicted Sales'] = selected_month_forecast_table['Predicted Sales'].astype(int)
-selected_month_forecast_table['Lower Estimate'] = selected_month_forecast_table['Lower Estimate'].astype(int)
-selected_month_forecast_table['Upper Estimate'] = selected_month_forecast_table['Upper Estimate'].astype(int)
+selected_month_forecast_table['Ventes prévues'] = selected_month_forecast_table['Ventes prévues'].astype(int)
+selected_month_forecast_table['Estimation basse'] = selected_month_forecast_table['Estimation basse'].astype(int)
+selected_month_forecast_table['Estimation haute'] = selected_month_forecast_table['Estimation haute'].astype(int)
 st.dataframe(selected_month_forecast_table)
 
 # Summary of predictions
 st.write(
-    f"The above tables and charts provide a visual representation of the past sales and predicted future demand for "
-    f"{selected_product} during {selected_season} in {selected_month}. This information can guide stock levels and ordering needs."
+   f"Les tableaux et graphiques ci-dessus présentent une représentation visuelle des ventes passées et de la demande future prévue pour "
+f"{selected_product} durant la saison {selected_season}, au mois de {selected_month}. Ces informations permettent d'optimiser la gestion des stocks et de mieux planifier les besoins en approvisionnement."
 )
-
 # Additional visualizations
 
 # Pie chart for sales distribution by month (last year's sales)
@@ -190,6 +189,6 @@ fig_pie = px.pie(
     last_year_data,
     names='Month',
     values='Monthly_Sales',
-    title=f"Sales Distribution for {selected_product} in Last Year"
+    title=f"Répartition des ventes de {selected_product} au cours de la dernière année"
 )
 st.plotly_chart(fig_pie)
