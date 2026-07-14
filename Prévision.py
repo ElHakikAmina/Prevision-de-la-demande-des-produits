@@ -3,24 +3,27 @@ import streamlit as st
 # Set page configuration
 st.set_page_config(page_title="Product Demand Forecasting", layout="wide")
 
+# Logo ESTS
+st.image("images/est.png", width=180) 
+
 # Title and Introductory Message
-st.title("Product Demand Forecasting Application")
+st.title("Application de Prévision de la Demande des Produits")
 st.markdown("""
-    Welcome to the **Product Demand Forecasting Application**! 🌟
+    Bienvenue dans **l'Application de Prévision de la Demande des Produits** !🌟
 
-    This application utilizes advanced data analysis techniques to assist businesses in understanding and predicting product demand based on historical sales data. With intuitive visualizations and predictive modeling, users can make informed decisions to optimize inventory management and enhance sales strategies.
+    Cette application utilise des techniques avancées d'analyse de données afin d'aider les entreprises à comprendre et à prévoir la demande des produits à partir des données historiques de ventes. Grâce à des visualisations intuitives et à des modèles prédictifs, les utilisateurs peuvent prendre des décisions éclairées pour optimiser la gestion des stocks et améliorer leurs stratégies commerciales.
 
-    ## Key Features:
+    ## Fonctionnalités principales:
     - **User-Friendly Interface**: Navigate easily through the application for a seamless experience.
     - **Interactive Data Visualizations**: Engage with dynamic graphs and charts for insightful data analysis.
     - **Accurate Demand Forecasting**: Leverage machine learning algorithms for precise demand predictions.
 
-    ## How It Works:
+    ## Comment ça fonctionne:
     1. **Data Input**: Upload your sales data in the specified format to kickstart the analysis.
     2. **Forecasting**: Select the product and month for which you wish to forecast demand.
     3. **Visualization**: Explore detailed graphs and charts that illustrate your data and forecasts, aiding in strategic decision-making.
 
-    ## About This Project:
+    ## À propos de ce projet:
     Our goal is to provide businesses with a robust tool for predictive analytics, enabling alignment of inventory management with actual consumer demand. By harnessing data-driven insights, we aim to empower businesses in navigating market fluctuations effectively.
     
     Thank you for using our application, and we hope it serves you well in your decision-making process!
