@@ -15,18 +15,18 @@ data = data.sort_values('Month')
 
 # Define seasons/festivals with corresponding months
 seasons = {
-    "None": [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+    "Aucune": [
+        "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+        "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
     ],
-    "Diwali": ["October", "November"],
-    "Christmas": ["December"],
-    "Summer": ["April", "May", "June"],
-    "Monsoon": ["July", "August", "September"],
-    "New Year": ["January"]
+    "Diwali": ["Octobre", "Novembre"],
+    "Christmas": ["Décembre"],
+    "Summer": ["Avril", "Mai", "Juin"],
+    "Monsoon": ["Juillet", "Août", "Septembre"],
+    "New Year": ["Janvier"]
 }
 
-months_list = list(seasons["None"])  # Create a list of months for validation
+months_list = list(seasons["Aucune"])  # Create a list of months for validation
 
 # Sidebar selection for product, season/festival, and specific month
 st.sidebar.title("Prévision de la demande des produits")
@@ -56,12 +56,31 @@ forecast['yhat_upper'] = forecast['yhat_upper'].clip(lower=0).round().astype(int
 historical_data = product_data.copy()
 forecast_data = forecast[forecast['ds'] > product_data['ds'].max()]  # Only future months
 
+month_translation = {
+    "January": "Janvier",
+    "February": "Février",
+    "March": "Mars",
+    "April": "Avril",
+    "May": "Mai",
+    "June": "Juin",
+    "July": "Juillet",
+    "August": "Août",
+    "September": "Septembre",
+    "October": "Octobre",
+    "November": "Novembre",
+    "December": "Décembre"
+}
+
 # Add a 'Month' column with month names for easier season and month filtering
-forecast_data['Month'] = forecast_data['ds'].dt.strftime('%B')
+forecast_data['Month'] = (
+    forecast_data['ds']
+    .dt.strftime('%B')
+    .map(month_translation)
+)
 forecast_data['Year'] = forecast_data['ds'].dt.year
 
 # Filter forecast data based on selected season and month
-if selected_season != "None":
+if selected_season != "Aucune":
     season_months = seasons[selected_season]
     season_forecast_data = forecast_data[forecast_data['Month'].isin(season_months)]
 else:
