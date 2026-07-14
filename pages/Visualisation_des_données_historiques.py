@@ -14,8 +14,8 @@ months_list = ['January', 'February', 'March', 'April', 'May', 'June',
                'July', 'August', 'September', 'October', 'November', 'December']
 
 # Streamlit user inputs for month and product selection
-selected_month = st.selectbox("Select Month", months_list)
-selected_product = st.selectbox("Select Product", data['Product Name'].unique())
+selected_month = st.selectbox("Choisissez un mois", months_list)
+selected_product = st.selectbox("Choisissez un Produit", data['Product Name'].unique())
 
 # Filter data for the selected product
 monthly_data = data[data['Product Name'] == selected_product]
@@ -49,34 +49,34 @@ if not monthly_data.empty:  # Check if there is any data for the selected produc
     values = [total_sales, total_month_stock, predicted_value]
 
     # Plotting sales vs stock
-    st.subheader(f"Sales vs. Stock for {selected_product} in {selected_month}")
+    st.subheader(f"Ventes vs. Stock pour {selected_product} en {selected_month}")
 
     # Bar Plot for Sales and Stock
     fig_bar = go.Figure()
-    fig_bar.add_trace(go.Bar(x=['Sales', 'Stock'], y=[total_sales, total_month_stock], 
+    fig_bar.add_trace(go.Bar(x=['Ventes', 'Stock'], y=[total_sales, total_month_stock], 
                               marker_color=['blue', 'orange']))
-    fig_bar.update_layout(title='Sales vs Stock', xaxis_title='Category', yaxis_title='Amount')
+    fig_bar.update_layout(title='Ventes vs Stock', xaxis_title='Category', yaxis_title='Amount')
     st.plotly_chart(fig_bar)
 
     # Line Plot to visualize trends
     fig_line = go.Figure()
-    fig_line.add_trace(go.Scatter(x=['Sales', 'Stock'], y=[total_sales, total_month_stock], 
+    fig_line.add_trace(go.Scatter(x=['Ventes', 'Stock'], y=[total_sales, total_month_stock], 
                                    mode='lines+markers', name='Sales & Stock', line=dict(shape='linear')))
-    fig_line.update_layout(title='Sales vs Stock Trend', xaxis_title='Category', yaxis_title='Amount')
+    fig_line.update_layout(title='Ventes vs Stock Trend', xaxis_title='Category', yaxis_title='Amount')
     st.plotly_chart(fig_line)
 
     # Area Plot to visualize cumulative sales and stock
     fig_area = go.Figure()
-    fig_area.add_trace(go.Scatter(x=['Sales', 'Stock'], y=[total_sales, total_month_stock], 
+    fig_area.add_trace(go.Scatter(x=['ventes', 'Stock'], y=[total_sales, total_month_stock], 
                                    mode='lines', fill='tozeroy', name='Values'))
-    fig_area.update_layout(title='Cumulative Sales vs Stock', xaxis_title='Category', yaxis_title='Amount')
+    fig_area.update_layout(title='Cumul des ventes vs Stock', xaxis_title='Category', yaxis_title='Amount')
     st.plotly_chart(fig_area)
 
     # Pie Chart to represent sales and stock distribution
     fig_pie = go.Figure()
-    fig_pie.add_trace(go.Pie(labels=['Total Sales', 'Total Stock'], values=[total_sales, total_month_stock], 
+    fig_pie.add_trace(go.Pie(labels=['Ventes totales', 'Stock total'], values=[total_sales, total_month_stock], 
                               name='Sales and Stock'))
-    fig_pie.update_layout(title='Sales and Stock Distribution')
+    fig_pie.update_layout(title='Répartition des ventes et des stocks')
     st.plotly_chart(fig_pie)
 
 else:
