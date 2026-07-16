@@ -1,9 +1,12 @@
 from PIL import Image
 import streamlit as st
 
-
+st.set_page_config(
+    page_title="Prévision de la Demande",
+    page_icon="📊",
+    layout="wide"
+)
 # Set page configuration
-st.set_page_config(page_title="Product Demand Forecasting", layout="wide")
 
 # Logo ESTS
 col1, col2, col3 = st.columns([1,4,1])
