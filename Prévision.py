@@ -18,22 +18,17 @@ with col1:
     st.image(img)
 
 with col2:
-    st.markdown(""" <h1 style='text-align: center; font-size: 42px;
-           color: #0E4C92;
-           margin-bottom: 10px;'>
-    🎓 Projet de Fin d'Études
-    </h1>
+    st.markdown("""
+<h3 style='text-align:center;color:#0D47A1;font-size:20px;'>
+🎓 Projet de Fin d'Études 🎓
+</h3>
 
-    <h3 style='text-align: center;
-           color: gray;'>
-    École Supérieure de Technologie de Safi (EST Safi)
-    </h3>
+<h6 style='text-align:center;color:#6E6E6E;'>
+École Supérieure de Technologie de Safi (EST Safi)
+</h6>
 
-    <h5 style='text-align: center;
-           color: #2E8B57;'>
-    Année Universitaire 2025–2026
-    </h5>
-    """, unsafe_allow_html=True)
+
+""", unsafe_allow_html=True)
 
 with col3:
     img = Image.open("images/EST-Safi.jpg")
@@ -48,7 +43,28 @@ with col3:
 
 # Title and Introductory Message
 
-st.title("Application de Prévision de la Demande des Produits")
+st.markdown("""
+<h1 style='color:#B36742; text-align:center;'>
+Application de Prévision de la Demande des Produits
+</h1>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+
+
+
+<h5 style='text-align:center;color:#1565C0;font-weight:600;'>
+Licence Professionnelle : MQSL
+</h5>
+
+
+<h6 style='text-align:center;color:#2E8B57;ont-size:15px;'>
+Année Universitaire 2025–2026
+</h6>
+""", unsafe_allow_html=True)
+
+
 st.markdown("""
     Bienvenue dans **l'Application de Prévision de la Demande des Produits** !🌟
 
