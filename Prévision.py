@@ -163,10 +163,14 @@ Cette application a été développée dans le cadre de mon **Projet de Fin d'É
 col1, col2 = st.columns([1,2])
 
 with col1:
-    img = Image.open("images/dmnd-forcast.JPG")
-    img = img.resize((200, 200))
+    #img = Image.open("images/dmnd-forcast.JPG")
+    #img = img.resize((200, 200))
 
-    st.image(img)
+    #st.image(img)
+    st.image(
+    "images/dmnd-forcast.JPG",
+    use_container_width=True
+    )
 
 with col2:
     st.markdown("""  
