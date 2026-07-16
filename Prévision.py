@@ -2,7 +2,7 @@ from PIL import Image
 import streamlit as st
 
 st.set_page_config(
-    page_title="Prévision de la Demande",
+    page_title="PFE | ESTs | MQSL",
     page_icon="📊",
     layout="wide"
 )
