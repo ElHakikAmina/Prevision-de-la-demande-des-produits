@@ -106,41 +106,55 @@ Application de Prévision de la Demande des Produits
 """, unsafe_allow_html=True)
 
 
+
+
 st.markdown("""
 
-
-
 <h6 style='text-align:center;color:#5CA1D6;ont-size:15px;'>
-Licence Professionnelle : MQSL
+
+<span style='text-align:center;color:#5CA1D6;ont-size:15px;'>
+    Licence Professionnelle : MQSL
+</span>
+|
+<span style='text-align:center;color:#A5D6A7;font-size:15px;'>
+Année Universitaire 2025–2026
+</span>
+|
+<span style='text-align:center;color:#6B7280;font-size:15px;'>
+EL HAKIK Amina
+</span>
 </h6>
 
 
-<h6 style='text-align:center;color:#2E8B57;font-size:15px;'>
-Année Universitaire 2025–2026
+<h6 style='text-align:center;color:#A5D6A7;font-size:15px;'>
+
 </h6>
 """, unsafe_allow_html=True)
 
-
 st.markdown("""
-    Bienvenue dans **l'Application de Prévision de la Demande des Produits** !🌟
+<span style="color:#6B7280;">
+Bienvenue dans **l'Application de Prévision de la Demande des Produits** ! 🌟
 
-    Cette application utilise des techniques avancées d'analyse de données afin d'aider les entreprises à comprendre et à prévoir la demande des produits à partir des données historiques de ventes. Grâce à des visualisations intuitives et à des modèles prédictifs, les utilisateurs peuvent prendre des décisions éclairées pour optimiser la gestion des stocks et améliorer leurs stratégies commerciales.
+Cette application utilise des techniques avancées d'analyse de données afin d'aider les entreprises à comprendre et à prévoir la demande des produits à partir des données historiques de ventes.
 
-    ## Fonctionnalités principales:
-    - **User-Friendly Interface**: Navigate easily through the application for a seamless experience.
-    - **Interactive Data Visualizations**: Engage with dynamic graphs and charts for insightful data analysis.
-    - **Accurate Demand Forecasting**: Leverage machine learning algorithms for precise demand predictions.
+<h3 style="color:#85482D;">Fonctionnalités principales</h3>
 
-    ## Comment ça fonctionne:
-    1. **Data Input**: Upload your sales data in the specified format to kickstart the analysis.
-    2. **Forecasting**: Select the product and month for which you wish to forecast demand.
-    3. **Visualization**: Explore detailed graphs and charts that illustrate your data and forecasts, aiding in strategic decision-making.
+- **User-Friendly Interface** : Navigate easily through the application.
+- **Interactive Data Visualizations** : Engage with dynamic graphs.
+- **Accurate Demand Forecasting** : Leverage machine learning algorithms.
 
-    ## À propos de ce projet:
-    Our goal is to provide businesses with a robust tool for predictive analytics, enabling alignment of inventory management with actual consumer demand. By harnessing data-driven insights, we aim to empower businesses in navigating market fluctuations effectively.
-    
-    Thank you for using our application, and we hope it serves you well in your decision-making process!
-""")
+<h3 style="color:#85482D;">Comment ça fonctionne</h3>
+
+1. **Data Input** : Upload your sales data.
+2. **Forecasting** : Select the product and month.
+3. **Visualization** : Explore graphs and charts.
+
+<h3 style="color:#85482D;">À propos de ce projet</h3>
+
+Our goal is to provide businesses with a robust tool for predictive analytics.
+
+Thank you for using our application! </span>
+""", unsafe_allow_html=True)
 
 # Create two columns for images
 col1, col2 = st.columns(2)
