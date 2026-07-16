@@ -1,12 +1,50 @@
+from PIL import Image
 import streamlit as st
+
 
 # Set page configuration
 st.set_page_config(page_title="Product Demand Forecasting", layout="wide")
 
 # Logo ESTS
-st.image("images/est.png", width=180) 
+col1, col2, col3 = st.columns([1,4,1])
+
+with col1:
+    img = Image.open("images/est.png")
+    img = img.resize((130, 60))
+
+    st.image(img)
+
+with col2:
+    st.markdown(""" <h1 style='text-align: center; font-size: 42px;
+           color: #0E4C92;
+           margin-bottom: 10px;'>
+    🎓 Projet de Fin d'Études
+    </h1>
+
+    <h3 style='text-align: center;
+           color: gray;'>
+    École Supérieure de Technologie de Safi (EST Safi)
+    </h3>
+
+    <h5 style='text-align: center;
+           color: #2E8B57;'>
+    Année Universitaire 2025–2026
+    </h5>
+    """, unsafe_allow_html=True)
+
+with col3:
+    img = Image.open("images/EST-Safi.jpg")
+    img = img.resize((130, 60))
+
+    st.image(img)
+    
+
+
+
+
 
 # Title and Introductory Message
+
 st.title("Application de Prévision de la Demande des Produits")
 st.markdown("""
     Bienvenue dans **l'Application de Prévision de la Demande des Produits** !🌟
