@@ -11,6 +11,23 @@ st.set_page_config(
 
 
 
+st.markdown("""
+<style>
+
+/* Hide Streamlit header */
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Remove top spacing */
+.block-container {
+    padding-top: 1rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
 
 
 
@@ -131,39 +148,57 @@ EL HAKIK Amina
 </h6>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<span style="color:#6B7280;">
+
+
+
+
+st.markdown("""  
+            <span style="color:#6B7280;">
 Bienvenue dans **l'Application de Prévision de la Demande des Produits** ! 🌟
 
-Cette application utilise des techniques avancées d'analyse de données afin d'aider les entreprises à comprendre et à prévoir la demande des produits à partir des données historiques de ventes.
+Cette application a été développée dans le cadre de mon **Projet de Fin d'Études (PFE)** pour l'obtention de la **Licence Professionnelle en Management de la Qualité, Sécurité et Logistique (MQSL)** à l'**École Supérieure de Technologie de Safi (EST Safi)**.
+
+""", unsafe_allow_html=True)
+
+col1, col2 = st.columns([1,2])
+
+with col1:
+    img = Image.open("images/dmnd-forcast.JPG")
+    img = img.resize((200, 200))
+
+    st.image(img)
+
+with col2:
+    st.markdown("""  
+            Le projet consiste à concevoir une application intelligente capable d'analyser les données historiques de ventes et de générer des prévisions fiables de la demande des produits grâce à l'utilisation de techniques d'**Intelligence Artificielle** et d'**analyse prédictive**.
+
+            L'application permet aux utilisateurs de consulter les données historiques, visualiser les tendances, générer des prévisions futures et faciliter la prise de décision afin d'optimiser la gestion des stocks et d'améliorer la planification des approvisionnements.
+""", unsafe_allow_html=True)
+
+
+
+
+
+
+
+st.markdown("""
+
 
 <h3 style="color:#85482D;">Fonctionnalités principales</h3>
 
-- **User-Friendly Interface** : Navigate easily through the application.
-- **Interactive Data Visualizations** : Engage with dynamic graphs.
-- **Accurate Demand Forecasting** : Leverage machine learning algorithms.
+- **Interface conviviale** : Naviguez facilement dans l'application grâce à une interface simple et intuitive.
+- **Visualisations interactives des données** : Explorez les données à travers des graphiques et des visualisations dynamiques.
+- **Prévision précise de la demande** : Exploitez des algorithmes de machine learning pour générer des prévisions fiables de la demande des produits.
 
 <h3 style="color:#85482D;">Comment ça fonctionne</h3>
 
-1. **Data Input** : Upload your sales data.
-2. **Forecasting** : Select the product and month.
-3. **Visualization** : Explore graphs and charts.
+1. **Importation des données** : Chargez vos données de ventes afin de lancer l'analyse et les prévisions.
+2. **Prévision de la demande** : Sélectionnez le produit et le mois pour lesquels vous souhaitez générer une prévision.
+3. **Visualisation des résultats** : Consultez des graphiques et des tableaux interactifs pour analyser les données historiques et les prévisions.
 
 <h3 style="color:#85482D;">À propos de ce projet</h3>
 
-Our goal is to provide businesses with a robust tool for predictive analytics.
-
-Thank you for using our application! </span>
+Mon objectif est de développer un outil performant d'analyse prédictive.
+             </span>
 """, unsafe_allow_html=True)
 
-# Create two columns for images
-col1, col2 = st.columns(2)
-
-# Add images to the columns
-with col1:
-    st.image("https://media.licdn.com/dms/image/v2/C4D12AQFB-LCvXBaoNA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1619619546670?e=2147483647&v=beta&t=8eHOWwIN7DPk9ucHRU5V1xnYHDdv-1Lk4v8c2Aax0N0", width=500)
-
-with col2:
-    st.image("https://tridentinfo.com/wp-content/uploads/2023/04/demand-forecasting-machine-learning-use-cases.webp", width=500)
-
-st.image("https://miro.medium.com/v2/resize:fit:1400/1*yFjlQejWS5s_IwWGmRGjYQ.png", width=1026)  # Replace with the actual path to your logo or image
