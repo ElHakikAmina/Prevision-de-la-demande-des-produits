@@ -165,8 +165,34 @@ else:
 selected_month_forecast_data = season_forecast_data[season_forecast_data['Month'] == selected_month]
 
 # Layout setup
-st.title("📈 Prévision de la demande des produits")
-st.write(f"Cette application présente une prévision de la demande future pour {selected_product}.")
+#st.title("📈 Prévision de la demande des produits")
+st.markdown("""
+<h1 style="
+    color:#B36742;
+    text-align:center;
+    font-size:42px;
+    font-weight:700;
+">
+📈 Prévision de la demande des produits
+</h1>
+""", unsafe_allow_html=True)
+
+
+
+
+#st.write(f"Cette application présente une prévision de la demande future pour {selected_product}.")
+st.markdown(
+    f"""
+    <p style="color:#6B7280; font-size:18px;">
+        Cette application présente une prévision de la demande future pour <strong>{selected_product}</strong>.
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+
 
 # Voice input and response
 def recognize_speech():
@@ -232,7 +258,20 @@ if not selected_month_forecast_data.empty:
     selected_lower = selected_month_forecast_data['yhat_lower'].iloc[0]
     selected_upper = selected_month_forecast_data['yhat_upper'].iloc[0]
     
-    st.subheader(f"Demande prévue pour {selected_product} - {selected_season} ({selected_month})")
+    #st.subheader(f"Demande prévue pour {selected_product} - {selected_season} ({selected_month})")
+    st.markdown(
+    f"""
+    <h3 style="color:#85482D;">
+        Demande prévue pour {selected_product} - {selected_season} ({selected_month})
+    </h3>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+
+
     col1, col2, col3 = st.columns(3)
     col1.metric("Prediction", f"{selected_month_prediction}")
     col2.metric("Lower Estimate", f"{selected_lower}")
