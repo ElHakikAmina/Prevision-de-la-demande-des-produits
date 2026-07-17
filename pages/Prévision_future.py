@@ -13,6 +13,25 @@ st.set_page_config(
 )
 
 
+
+st.markdown("""
+<style>
+
+/* Hide Streamlit header */
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Remove top spacing */
+.block-container {
+    padding-top: 1rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
+
 # Load the data (Ensure the file path is correct)
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 
