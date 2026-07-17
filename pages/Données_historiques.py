@@ -100,6 +100,60 @@ months = {
     "Décembre": 12
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+st.markdown("""
+<style>
+
+/* Texte des labels */
+label {
+    color: #85482D !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+/* Zone du selectbox */
+div[data-baseweb="select"] > div {
+    background-color: #F8F9FA !important;
+    border: 2px solid #236FAF !important;
+    border-radius: 8px !important;
+}
+
+/* Texte sélectionné */
+div[data-baseweb="select"] span {
+    color: #236FAF !important;
+    font-weight: 600;
+}
+
+/* Menu déroulant */
+div[role="listbox"] {
+    background-color: white !important;
+}
+
+/* Options */
+div[role="option"] {
+    color: #374151 !important;
+}
+
+/* Option survolée */
+div[role="option"]:hover {
+    background-color: #E8F1FB !important;
+    color: #236FAF !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # Sélection du mois et du produit
 selected_month = st.selectbox(
     "Choisissez un mois",
