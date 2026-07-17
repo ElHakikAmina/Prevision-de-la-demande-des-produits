@@ -1,5 +1,8 @@
 # AI-Powered Demand Forecasting System for Hyperlocal Delivery Services
 ![Home Page](images/Prévision.png)
+![Home Page](images/données historiques.png)
+![Home Page](images/prevision future.png)
+![Home Page](images/visualisation des donnees historique.png)
 
 ## Project Overview
 In hyperlocal delivery services, precise demand forecasting is essential to maintain optimal inventory levels and meet customer needs. Platforms like Blinkit, Dunzo, and Swiggy Instamart face significant challenges in predicting demand due to rapid fluctuations caused by factors such as weather changes, local festivals, and traffic conditions. These fluctuations can result in either stockouts or overstocking, leading to customer dissatisfaction and inventory waste.
