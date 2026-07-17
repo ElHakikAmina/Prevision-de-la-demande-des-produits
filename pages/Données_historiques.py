@@ -30,6 +30,53 @@ header[data-testid="stHeader"] {
 
 
 
+st.markdown("""
+<style>
+
+/* ===== Sidebar ===== */
+[data-testid="stSidebar"]{
+    background-color: #FCFCFC;
+    border-right: 2px solid #F8E8DF;
+}
+
+/* ===== Navigation links ===== */
+[data-testid="stSidebarNav"] a,
+[data-testid="stSidebarNav"] a span{
+    color:#B36742 !important;
+    font-weight:600 !important;
+    border-radius:12px;
+    transition:all .3s ease;
+}
+
+/* ===== Hover ===== */
+[data-testid="stSidebarNav"] a:hover,
+[data-testid="stSidebarNav"] a:hover span{
+    color:white !important;
+}
+
+/* Hover background */
+[data-testid="stSidebarNav"] li:hover{
+    background:linear-gradient(90deg,#D8AF99,#B36742);
+    border-radius:12px;
+}
+
+/* ===== Selected page ===== */
+[data-testid="stSidebarNav"] li[data-selected="true"]{
+    background:linear-gradient(90deg,#1565C0,#4A90E2);
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(21,101,192,.25);
+}
+
+[data-testid="stSidebarNav"] li[data-selected="true"] a,
+[data-testid="stSidebarNav"] li[data-selected="true"] span{
+    color:white !important;
+    font-weight:700 !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
 
 # Load your data
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
