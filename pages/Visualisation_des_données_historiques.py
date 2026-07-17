@@ -3,6 +3,14 @@ import pandas as pd
 from prophet import Prophet
 import plotly.graph_objects as go
 
+
+st.set_page_config(
+    page_title="PFE | ESTs | MQSL",
+    page_icon="📊",
+    layout="wide"
+)
+
+
 # Load your data (ensure the file path is correct)
 data = pd.read_excel('pages/Base_de_Donnees_Ventes.xlsx')
 

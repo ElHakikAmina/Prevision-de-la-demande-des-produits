@@ -5,6 +5,14 @@ import plotly.express as px
 import speech_recognition as sr
 import pyttsx3
 
+
+st.set_page_config(
+    page_title="PFE | ESTs | MQSL",
+    page_icon="📊",
+    layout="wide"
+)
+
+
 # Load the data (Ensure the file path is correct)
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 

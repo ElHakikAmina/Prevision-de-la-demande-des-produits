@@ -3,6 +3,13 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+
+st.set_page_config(
+    page_title="PFE | ESTs | MQSL",
+    page_icon="📊",
+    layout="wide"
+)
+
 # Load your data
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 
