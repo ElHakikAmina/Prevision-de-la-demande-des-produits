@@ -4,7 +4,7 @@ from prophet import Prophet
 import plotly.graph_objects as go
 
 # Load your data (ensure the file path is correct)
-data = pd.read_excel('pages/hyperlocal_demand_forecasting_with_grocery_items.xlsx')
+data = pd.read_excel('pages/Base_de_Donnees_Ventes.xlsx')
 
 # Convert 'Month' to datetime
 data['Month'] = pd.to_datetime(data['Month'])

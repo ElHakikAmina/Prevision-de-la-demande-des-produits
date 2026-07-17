@@ -6,7 +6,7 @@ import speech_recognition as sr
 import pyttsx3
 
 # Load the data (Ensure the file path is correct)
-data = pd.read_excel("pages/hyperlocal_demand_forecasting_with_grocery_items.xlsx")
+data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 
 # Data preprocessing
 data['Month'] = pd.to_datetime(data['Month'])
