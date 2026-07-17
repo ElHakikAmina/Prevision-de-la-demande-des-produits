@@ -280,7 +280,17 @@ else:
     st.write(f"No forecast data available for the selected season: {selected_season} and month: {selected_month}.")
 
 # Visualize past and predicted future sales for the selected season and month
-st.subheader(f"Ventes passées vs demande prévue durant {selected_season} ({selected_month})")
+#st.subheader(f"Ventes passées vs demande prévue durant {selected_season} ({selected_month})")
+st.markdown(
+    f"""
+    <h3 style="color:#85482D;">
+        Ventes passées vs demande prévue durant {selected_season} ({selected_month})
+    </h3>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 # Line chart for past sales and predictions for the season and specific month
 fig_line = px.line(
@@ -309,10 +319,39 @@ selected_month_forecast_table['Estimation haute'] = selected_month_forecast_tabl
 st.dataframe(selected_month_forecast_table)
 
 # Summary of predictions
-st.write(
-   f"Les tableaux et graphiques ci-dessus présentent une représentation visuelle des ventes passées et de la demande future prévue pour "
-f"{selected_product} durant la saison {selected_season}, au mois de {selected_month}. Ces informations permettent d'optimiser la gestion des stocks et de mieux planifier les besoins en approvisionnement."
+#st.write(
+#   f"Les tableaux et graphiques ci-dessus présentent une représentation visuelle des ventes passées et de la demande future prévue pour "
+#f"{selected_product} durant la saison {selected_season}, au mois de {selected_month}. Ces informations permettent d'optimiser la gestion des stocks et de mieux planifier les besoins en approvisionnement."
+#)
+st.markdown(
+    f"""
+    <div style="
+        background-color:#F8F9FA;
+        border-left:5px solid #B36742;
+        padding:18px;
+        border-radius:10px;
+        color:#374151;
+        font-size:17px;
+        line-height:1.7;
+        text-align:justify;
+    ">
+        📈 Les tableaux et graphiques ci-dessus présentent une représentation visuelle des
+        <strong>ventes passées</strong> et de la <strong>demande future prévue</strong> pour
+        <span style="color:#236FAF;"><strong>{selected_product}</strong></span>
+        durant la saison
+        <span style="color:#B36742;"><strong>{selected_season}</strong></span>,
+        au mois de
+        <span style="color:#B36742;"><strong>{selected_month}</strong></span>.
+        Ces informations permettent d'optimiser la gestion des stocks et de mieux planifier
+        les besoins en approvisionnement.
+    </div>
+    """,
+    unsafe_allow_html=True
 )
+
+
+
+
 # Additional visualizations
 
 # Pie chart for sales distribution by month (last year's sales)
