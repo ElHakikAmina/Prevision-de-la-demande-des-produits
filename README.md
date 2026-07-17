@@ -10,7 +10,7 @@
 
 ![Données historiques](images/donnéeshistoriques.PNG)
 
-![Prévision future](images/previsionfuture.png)
+![Prévisionfuture](images/previsionfuture.png)
 
 ![Visualisation](images/visualisation%20des%20donnees%20historique.png)
 
