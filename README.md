@@ -2,7 +2,7 @@
 ![Home Page](images/Prévision.png)
 
 #Données historiques
-![Home Page](images/donnéeshistoriques.PNG)
+![Données historiques](images/donnéeshistoriques.PNG)
 
 ![Home Page](images/previsionfuture.png)
 
