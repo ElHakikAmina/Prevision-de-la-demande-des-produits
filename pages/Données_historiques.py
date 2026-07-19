@@ -133,7 +133,6 @@ div[role="option"]:hover {
     background-color: #E8F1FB !important;
     color: #236FAF !important;
 }
-
 </style>
 """, unsafe_allow_html=True)
 # Sélection du mois et du produit
