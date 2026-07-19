@@ -5,18 +5,14 @@ import plotly.express as px
 import speech_recognition as sr
 import pyttsx3
 
-
 st.set_page_config(
     page_title="PFE | ESTs | MQSL",
     page_icon="📊",
     layout="wide"
 )
 
-
-
 st.markdown("""
 <style>
-
 /* Hide Streamlit header */
 header[data-testid="stHeader"] {
     display: none;
@@ -29,8 +25,6 @@ header[data-testid="stHeader"] {
 
 </style>
 """, unsafe_allow_html=True)
-
-
 
 st.markdown("""
 <style>
@@ -94,11 +88,11 @@ seasons = {
         "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
         "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
     ],
-    "Diwali": ["Octobre", "Novembre"],
-    "Christmas": ["Décembre"],
-    "Summer": ["Avril", "Mai", "Juin"],
-    "Monsoon": ["Juillet", "Août", "Septembre"],
-    "New Year": ["Janvier"]
+    "Rentrée Scolaire": ["Septembre", "Octobre"],
+    "Saison Touristique": ["Juin", "Juillet", "Août", "Septembre"],
+    "Hiver ": ["Novembre", "Décembre", "Janvier", "Février"],
+    "Printemps": ["Mars", "Avril", "Mai"],
+    "nouvelle année": ["Janvier"]
 }
 
 months_list = list(seasons["Aucune"])  # Create a list of months for validation
