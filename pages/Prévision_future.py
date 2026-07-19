@@ -188,63 +188,63 @@ st.markdown(
 
 
 
-# Voice input and response
-def recognize_speech():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.sidebar.write("Say the product name followed by the month you want to predict the sales for...")
-        audio = r.listen(source)
-    try:
-        text = r.recognize_google(audio)
-        st.write("You said: " + text)
-        return text
-    except sr.UnknownValueError:
-        st.sidebar.write("Sorry, I could not understand the audio.")
-        return None
-    except sr.RequestError:
-        st.sidebar.write("Could not request results.")
-        return None
+# # Voice input and response
+# def recognize_speech():
+#     r = sr.Recognizer()
+#     with sr.Microphone() as source:
+#         st.sidebar.write("Say the product name followed by the month you want to predict the sales for...")
+#         audio = r.listen(source)
+#     try:
+#         text = r.recognize_google(audio)
+#         st.write("You said: " + text)
+#         return text
+#     except sr.UnknownValueError:
+#         st.sidebar.write("Sorry, I could not understand the audio.")
+#         return None
+#     except sr.RequestError:
+#         st.sidebar.write("Could not request results.")
+#         return None
 
-def respond(prediction):
-    engine = pyttsx3.init()
-    engine.say(f"The predicted sales for {selected_product} in {selected_month} are {prediction}")
-    engine.runAndWait()
+# def respond(prediction):
+#     engine = pyttsx3.init()
+#     engine.say(f"The predicted sales for {selected_product} in {selected_month} are {prediction}")
+#     engine.runAndWait()
 
-# Voice control - Place the button in the sidebar for left alignment
-if st.sidebar.button("Click to speak", key="speak_button"):
-    text = recognize_speech()
-    if text:
-        words = text.split()
-        if len(words) < 2:
-            st.sidebar.write("Please provide both a product name and a month.")
-        else:
-            # Extracting the product name and month
-            month_mentioned = words[-1]  # Last word as month
-            product_mentioned = ' '.join(words[:-1])  # All but the last word as product
+# # Voice control - Place the button in the sidebar for left alignment
+# if st.sidebar.button("Click to speak", key="speak_button"):
+#     text = recognize_speech()
+#     if text:
+#         words = text.split()
+#         if len(words) < 2:
+#             st.sidebar.write("Please provide both a product name and a month.")
+#         else:
+#             # Extracting the product name and month
+#             month_mentioned = words[-1]  # Last word as month
+#             product_mentioned = ' '.join(words[:-1])  # All but the last word as product
             
-            # Update product selection if the recognized product is valid
-            if product_mentioned in data['Product Name'].unique():
-                selected_product = product_mentioned
-                # Update the sidebar selection
-                st.sidebar.selectbox("Select a product", data['Product Name'].unique(), index=list(data['Product Name'].unique()).index(selected_product))
+#             # Update product selection if the recognized product is valid
+#             if product_mentioned in data['Product Name'].unique():
+#                 selected_product = product_mentioned
+#                 # Update the sidebar selection
+#                 st.sidebar.selectbox("Select a product", data['Product Name'].unique(), index=list(data['Product Name'].unique()).index(selected_product))
 
-            # Update month selection if the recognized month is valid
-            if month_mentioned in months_list:
-                selected_month = month_mentioned
-                # Update the sidebar selection
-                st.sidebar.selectbox("Select a month", months_list, index=months_list.index(selected_month))
-            else:
-                st.sidebar.write(f"Month '{month_mentioned}' not recognized. Please try again.")
+#             # Update month selection if the recognized month is valid
+#             if month_mentioned in months_list:
+#                 selected_month = month_mentioned
+#                 # Update the sidebar selection
+#                 st.sidebar.selectbox("Select a month", months_list, index=months_list.index(selected_month))
+#             else:
+#                 st.sidebar.write(f"Month '{month_mentioned}' not recognized. Please try again.")
             
-            # Re-fetch the forecast data based on the updated selection
-            selected_month_forecast_data = season_forecast_data[season_forecast_data['Month'] == selected_month]
+#             # Re-fetch the forecast data based on the updated selection
+#             selected_month_forecast_data = season_forecast_data[season_forecast_data['Month'] == selected_month]
             
-            # Update the metrics display
-            if not selected_month_forecast_data.empty:
-                selected_month_prediction = selected_month_forecast_data['yhat'].iloc[0]
-                respond(selected_month_prediction)  # Announce the prediction
-            else:
-                st.write(f"No forecast data available for the product: {selected_product} and month: {selected_month}.")
+#             # Update the metrics display
+#             if not selected_month_forecast_data.empty:
+#                 selected_month_prediction = selected_month_forecast_data['yhat'].iloc[0]
+#                 respond(selected_month_prediction)  # Announce the prediction
+#             else:
+#                 st.write(f"No forecast data available for the product: {selected_product} and month: {selected_month}.")
 
 # Show metrics for selected season and month
 if not selected_month_forecast_data.empty:
