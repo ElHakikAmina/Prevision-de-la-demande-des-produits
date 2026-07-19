@@ -3,13 +3,11 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-
 st.set_page_config(
     page_title="PFE | ESTs | MQSL",
     page_icon="📊",
     layout="wide"
 )
-
 
 st.markdown("""
 <style>
@@ -26,9 +24,6 @@ header[data-testid="stHeader"] {
 
 </style>
 """, unsafe_allow_html=True)
-
-
-
 
 st.markdown("""
 <style>
@@ -76,9 +71,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
-
-# Load your data
+# lire la data à partir d'un fichier excel
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 
 # Convert 'Month' to datetime
@@ -99,17 +92,6 @@ months = {
     "Novembre": 11,
     "Décembre": 12
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
