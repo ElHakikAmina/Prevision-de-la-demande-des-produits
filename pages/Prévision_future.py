@@ -74,7 +74,7 @@ st.markdown("""
 
 
 
-# Load the data (Ensure the file path is correct)
+# Load the data (Ensure the file path is correct).
 data = pd.read_excel("pages/Base_de_Donnees_Ventes.xlsx")
 
 # Data preprocessing
